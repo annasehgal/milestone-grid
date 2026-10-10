@@ -1,0 +1,4 @@
+streamlit>=1.65,<2
+PyYAML>=6,<7
+icalendar>=6,<7
+pytest>=8,<10
