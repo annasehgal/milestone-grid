@@ -1,0 +1,67 @@
+settings:
+  timezone: America/New_York
+  cycle: Example cycle
+  active_item_target: 3
+labels:
+  primary_entity: Item
+  secondary_entity: Track
+  resources: Resources
+  primary_date: Primary date
+  secondary_date: Secondary date
+  target_date: Target date
+items:
+  - name: Project Atlas
+    track: Planning
+    category: Project
+    primary_deadline: 2027-02-10
+    confidence: confirmed
+    status: active
+    state: active
+    priority: high
+    note: Final review is underway.
+  - name: Renewal Beta
+    track: Operations
+    category: Renewal
+    primary_deadline: 2027-03-12
+    target_deadline: 2027-03-05
+    confidence: confirmed
+    status: watch
+    state: active
+    priority: medium
+  - name: Initiative Cedar
+    track: Personal
+    category: Initiative
+    primary_deadline: 2027-04-05
+    confidence: provisional
+    status: active
+    state: active
+    priority: low
+resources:
+  - item_name: Project Atlas
+    name: Workspace access
+    category: Support
+    separate_action: true
+    automatic: false
+    referral_required: false
+    deadline: 2027-02-01
+    confidence: confirmed
+    status: watch
+    state: active
+    action: Request access before the review.
+archive:
+  - name: Project Delta
+    track: Planning
+    reason: No longer aligned with current priorities.
+    date: 2026-10-01
+    reconsiderable: true
+completed:
+  - name: Phase zero
+    item_name: Project Atlas
+    date: 2026-09-20
+    status: done
+history:
+  - date: 2026-10-01
+    type: removed
+    name: Project Delta
+    note: Scope changed.
+decisions: []
