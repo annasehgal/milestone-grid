@@ -1,5 +1,7 @@
 # milestone-grid
 
+## Demo: [View Live](https://arkive-2hhjguyfufwtyqzteafgaf.streamlit.app/)
+
 `milestone-grid` is a local-first dashboard for tracking milestones, deadlines, resources, decisions, and historical changes.
 
 It includes timeline views, date grouping, private YAML records, calendar export, a historical archive, resource and action tracking, and a decision comparison view. It runs on your machine without an account or database.
