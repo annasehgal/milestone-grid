@@ -11,7 +11,6 @@ STYLE = """
 .block-container { max-width:1180px; padding-top:2rem; padding-bottom:4rem; }
 section[data-testid="stSidebar"] { background:#fff; border-right:1px solid var(--mg-line); }
 section[data-testid="stSidebar"] .block-container { padding-top:1.8rem; }
-div[data-testid="stToolbar"] { display:none; }
 h1,h2,h3,p { letter-spacing:0; }
 h1 { font-size:1.75rem !important; font-weight:690 !important; margin:0 0 .3rem !important; }
 h2 { font-size:1.12rem !important; font-weight:660 !important; margin:1.65rem 0 .8rem !important; }

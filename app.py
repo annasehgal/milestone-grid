@@ -20,8 +20,18 @@ editable = source.resolve() == DEFAULT_PRIVATE.resolve()
 st.markdown(STYLE, unsafe_allow_html=True)
 
 nav = ["Overview", "Timeline", labels["resources"], "History", "Decisions", "Settings"]
+page_ids = ["overview", "timeline", "resources", "history", "decisions", "settings"]
+if "page" not in st.session_state:
+    requested_page = st.query_params.get("page", "overview")
+    st.session_state["page"] = nav[page_ids.index(requested_page)] if requested_page in page_ids else nav[0]
+
+
+def remember_page():
+    st.query_params["page"] = page_ids[nav.index(st.session_state["page"])]
+
+
 st.sidebar.markdown('<div class="mg-brand">milestone-grid</div>', unsafe_allow_html=True)
-page = st.sidebar.radio("Workspace", nav, label_visibility="collapsed", key="page")
+page = st.sidebar.radio("Workspace", nav, label_visibility="collapsed", key="page", on_change=remember_page)
 st.sidebar.divider()
 st.sidebar.caption(f"{text(data.get('settings', {}).get('cycle'), 'Local workspace')}")
 st.sidebar.caption("Private workspace" if editable else "Example workspace")
@@ -45,6 +55,7 @@ def title(name, detail=""):
 def go_to_month(month):
     st.session_state["timeline_month"] = month
     st.session_state["page"] = "Timeline"
+    remember_page()
 
 
 def attention_rows():
